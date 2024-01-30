@@ -6,8 +6,8 @@ VALUES
 
 INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME, PHONE, EMAIL, VIP)
 VALUES
-    ('Satrustegue', 'Feliciano', 987654321, 'sasa.fefe@terra.com.br', 1),
-    ('Orelhana', 'Costa', 912345678, 'ocosta@gmail.com', 0);
+    ('Satrústegui', 'Feliciano', 987654321, 'sfeliciano@gmail.com', 1),
+    ('Antonin', 'Sertillanges', 912345678, 'antonins@gmail.com', 0);
 
 SELECT * FROM ATTENDEE;
 
@@ -20,16 +20,16 @@ SELECT * FROM ATTENDEE;
 */
 
 /* Não podemos colocar uma FOREIGN KEY inválida. nesse caso, não existe um ATTENDEE_ID igual a 5 */
-INSERT INTO COMPANY (NAME, DEsCRIPTION, PRIMARY_CONTACT_ATTENDEE_ID)
+INSERT INTO COMPANY (NAME, DESCRIPTION, PRIMARY_CONTACT_ATTENDEE_ID)
 VALUES (
-    'Usda Silosystem Alsack Norcom Cs1 Axfor',
-    'Agritech Agro Industrial Ltda.',
+    'Satrústegui Tech',
+    'Technology',
     /*aqui >>>*/ 5 /*<<< está o erro*/
 );
 
-/* Mas isso vai dar certo. A empresa Usda bla bla bla vai estar associada o Satrustegue Feliciano (Id: 3) */
-INSERT INTO COMPANY (NAME, DEsCRIPTION, PRIMARY_CONTACT_ATTENDEE_ID)
-VALUES ('Usda Silosystem Alsack Norcom Cs1 Axfor', 'Agritech Agro Industrial Ltda.', 3);
+/* Mas isso vai dar certo. A empresa abaixo vai estar associada o Satrustegue Feliciano (Id: 3) */
+INSERT INTO COMPANY (NAME, DESCRIPTION, PRIMARY_CONTACT_ATTENDEE_ID)
+VALUES ('Satrústegui Tech', 'Technology', 3);
 
 /*
    Deletar registros:
